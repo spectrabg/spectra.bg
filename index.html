@@ -142,12 +142,33 @@
         row.className = 'service-row';
         const fmt = n => n.toFixed(2).replace('.', ',');
         const unit = svc.unit ? ` ${lang.services.units[svc.unit]}` : '';
+        const leadTimeHtml = svc.leadTime ? (() => {
+          const lt = svc.leadTime;
+          const glyphs = ['○', '◔', '◑', '◕', '●'];
+          const idx = Math.round((lt.current - lt.min) / (lt.max - lt.min) * 4);
+          const glyph = glyphs[Math.max(0, Math.min(4, idx))];
+          const third = (lt.max - lt.min) / 3;
+          const workloadKey = lt.current <= lt.min + third ? 'low'
+            : lt.current <= lt.min + 2 * third ? 'medium' : 'high';
+          const workloadLabel = lang.services.workload[workloadKey];
+          const leadTimeText = lang.services.leadTime.replace('{days}', lt.current).replace('{perPages}', lt.perPages);
+          return `<span class="service-lead-time">
+            <span class="service-lead-time-glyph">${glyph}</span>
+            <span class="service-lead-time-text">
+              <span class="service-lead-time-workload">${workloadLabel}</span>
+              <span class="service-lead-time-detail">${leadTimeText}</span>
+            </span>
+          </span>`;
+        })() : '';
         const priceHtml = svc.price === null
           ? `<span class="service-price">${lang.services.discretionary}</span>`
           : `<span class="service-price"><span class="service-price-label">${lang.services.from}</span> ${fmt(svc.price)} €${unit}<br><span class="service-price-bgn"><span class="service-price-label">${lang.services.from}</span> ${fmt(svc.price * DATA.eurToBgn)} ${lang.services.bgnSuffix}${unit}</span></span>`;
         row.innerHTML = `
           <span class="service-name">${lang.services.items[svc.key]}</span>
-          ${priceHtml}`;
+          <span class="service-right">
+            ${priceHtml}
+            ${leadTimeHtml}
+          </span>`;
         section.insertBefore(row, legalNotice);
       });
     }

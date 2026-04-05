@@ -12,6 +12,8 @@ const LANG_DE = {
 
   services: {
     heading: "Leistungen & Preise",
+    workload: { low: "Geringe Auslastung", medium: "Mittlere Auslastung", high: "Hohe Auslastung" },
+    leadTime: "Bearbeitungszeit von {days} Werktagen pro {perPages} Seiten",
     from:          "ab",
     bgnSuffix:     "lv.",
     discretionary: "individuelles Angebot",
