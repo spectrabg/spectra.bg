@@ -6,13 +6,13 @@ const DATA = {
 
   email: "office@spectra.bg",
 
-  whatsapp: "+359888000000", // international format, no spaces or dashes
+  whatsapp: "+35952000000", // international format, no spaces or dashes
 
   // Address shown in BG (Cyrillic)
-  addressBg: "ул. Примерна 1, София 1000, България",
+  addressBg: "улица Примерна 1, Варна 9002, България",
 
   // Address shown in EN/DE (Latinised)
-  addressLatin: "1 Primerna St, Sofia 1000, Bulgaria",
+  addressLatin: "ulitsa Primerna 1, Варна 9002, Bulgaria",
 
   // Google Maps link for the address
   addressMapUrl: "https://maps.google.com/?q=1+Primerna+St,+Sofia+1000,+Bulgaria",
