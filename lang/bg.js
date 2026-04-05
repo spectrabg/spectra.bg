@@ -12,6 +12,8 @@ const LANG_BG = {
 
   services: {
     heading: "Услуги и цени",
+    workload: { low: "Ниска натовареност", medium: "Средна натовареност", high: "Висока натовареност" },
+    leadTime: "Срок от {days} работни дни за {perPages} страници",
     from:          "от",
     bgnSuffix:     "лв.",
     discretionary: "индивидуална оферта",

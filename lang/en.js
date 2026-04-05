@@ -12,6 +12,8 @@ const LANG_EN = {
 
   services: {
     heading: "Services & Pricing",
+    workload: { low: "Low workload", medium: "Medium workload", high: "High workload" },
+    leadTime: "Completion time of {days} business days per {perPages} pages",
     from:          "from",
     bgnSuffix:     "lv.",
     discretionary: "personalised quote",

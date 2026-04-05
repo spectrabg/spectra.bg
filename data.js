@@ -26,7 +26,7 @@ const DATA = {
   eurToBgn: 1.95583, // fixed BGN/EUR conversion rate
 
   services: [
-    { key: "legalisedTranslation", price: 30, unit: "perPage" },
+    { key: "legalisedTranslation", price: 30, unit: "perPage", leadTime: { current: 2, min: 1, max: 10, perPages: 10 } },
     { key: "printAds",             price: null },
     { key: "publishing",           price: null },
   ],
