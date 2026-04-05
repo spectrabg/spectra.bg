@@ -199,13 +199,24 @@
       updateThemeButton();
     }
 
+    // ── Detect language from browser ─────────────────────────
+    function detectLang() {
+      const langs = navigator.languages || [navigator.language || ''];
+      for (const l of langs) {
+        const code = l.toLowerCase().split('-')[0];
+        if (code === 'de') return 'de';
+        if (code === 'bg' || code === 'mk') return 'bg';
+      }
+      return 'en';
+    }
+
     // ── Init ─────────────────────────────────────────────────
     applyData();
     updateThemeButton();
     const savedLang = (() => {
       try { return localStorage.getItem('lang'); } catch(_) { return null; }
     })();
-    setLang(savedLang || 'bg');
+    setLang(savedLang || detectLang());
   </script>
 
 </body>
