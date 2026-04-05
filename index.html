@@ -21,6 +21,7 @@
         <button onclick="setLang('bg')" id="btn-bg">BG</button>
         <button onclick="setLang('en')" id="btn-en">EN</button>
         <button onclick="setLang('de')" id="btn-de">DE</button>
+        <button id="btn-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">☀</button>
       </div>
     </div>
   </header>
@@ -84,6 +85,21 @@
       </div>
     </div>
   </footer>
+
+  <!-- ── Theme (apply before paint to avoid flash) ─────────── -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else if (saved === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (_) {}
+    })();
+  </script>
 
   <!-- ── Data & i18n ─────────────────────────────────────────── -->
   <script src="data.js"></script>
@@ -169,8 +185,23 @@
       document.getElementById('footer-year').textContent = new Date().getFullYear();
     }
 
+    // ── Theme toggle ─────────────────────────────────────────
+    function updateThemeButton() {
+      const isDark = document.documentElement.classList.contains('dark');
+      document.getElementById('btn-theme').textContent = isDark ? '☀' : '☾';
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.toggle('dark');
+      html.classList.toggle('light', !isDark);
+      try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch(_) {}
+      updateThemeButton();
+    }
+
     // ── Init ─────────────────────────────────────────────────
     applyData();
+    updateThemeButton();
     const savedLang = (() => {
       try { return localStorage.getItem('lang'); } catch(_) { return null; }
     })();

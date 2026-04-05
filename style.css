@@ -16,16 +16,25 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  img[src$=".svg"] { filter: invert(1); }
-
-  :root {
+  :root:not(.dark):not(.light) {
     --bg:       #0a0a0a;
     --surface:  #1a1a1a;
     --fg:       #f2f2f2;
     --fg-muted: #aaaaaa;
     --border:   #f2f2f2;
   }
+  :root:not(.dark):not(.light) img[src$=".svg"] { filter: invert(1); }
 }
+
+html.dark {
+  --bg:       #0a0a0a;
+  --surface:  #1a1a1a;
+  --fg:       #f2f2f2;
+  --fg-muted: #aaaaaa;
+  --border:   #f2f2f2;
+}
+
+html.dark img[src$=".svg"] { filter: invert(1); }
 
 /* ─── Reset ──────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
