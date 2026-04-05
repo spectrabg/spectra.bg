@@ -216,6 +216,7 @@ header .container {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
+  text-align: right;
 }
 
 .service-lead-time-workload {
