@@ -18,7 +18,7 @@ const DATA = {
   addressBg: "улица Иван Аксаков 1, Варна 9002, България",
 
   // Address shown in EN/DE (Latinised)
-  addressLatin: "ulitsa Ivan Aksakov 1, Варна 9002, Bulgaria",
+  addressLatin: "ulitsa Ivan Aksakov 1, Varna 9002, Bulgaria",
 
   // Google Maps link for the address
   addressMapUrl: "https://maps.app.goo.gl/5vPEtGgnL8djLR2T8",
