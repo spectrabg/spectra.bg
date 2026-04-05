@@ -15,7 +15,7 @@ const LANG_EN = {
     from:    "from",
     currency: "EUR",
     items: {
-      translation:  "Translation DE ↔ BG",
+      translation:  "Translation German ↔ Bulgarian",
       legalisation: "Legalisation under Bulgarian Law",
       printAds:     "Print Advertising",
       publishing:   "Publishing",

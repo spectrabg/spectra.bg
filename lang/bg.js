@@ -15,7 +15,7 @@ const LANG_BG = {
     from:    "от",
     currency: "EUR",
     items: {
-      translation:  "Превод  ↔ BG",
+      translation:  "Превод Немски ↔ Български",
       legalisation: "Легализация по българското законодателство",
       printAds:     "Печатна реклама",
       publishing:   "Издателска дейност",

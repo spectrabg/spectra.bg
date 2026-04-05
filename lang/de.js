@@ -15,7 +15,7 @@ const LANG_DE = {
     from:    "ab",
     currency: "EUR",
     items: {
-      translation:  "Übersetzung DE ↔ BG",
+      translation:  "Übersetzung Deutsch ↔ Bulgarisch",
       legalisation: "Beglaubigung nach bulgarischem Recht",
       printAds:     "Printwerbung",
       publishing:   "Verlagsdienstleistungen",
