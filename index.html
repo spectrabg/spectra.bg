@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Spectra.bg — Преводи, легализация, печатна реклама и издателство." />
+  <title>Spectra.bg</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────── -->
+  <header>
+    <div class="container">
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#services" data-i18n="nav.services"></a>
+        <a href="#contact"  data-i18n="nav.contact"></a>
+      </nav>
+
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button onclick="setLang('bg')" id="btn-bg">BG</button>
+        <button onclick="setLang('en')" id="btn-en">EN</button>
+        <button onclick="setLang('de')" id="btn-de">DE</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Hero ────────────────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero">
+    <div class="container">
+      <div class="hero-text">
+        <img id="site-logo" src="" alt="Spectra.bg" />
+        <p class="hero-tagline" data-i18n="hero.tagline"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Services ────────────────────────────────────────────── -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-heading" data-i18n="services.heading"></h2>
+      <!-- Service rows injected by JS -->
+      <p class="price-note" data-i18n="services.priceNote"></p>
+    </div>
+  </section>
+
+  <!-- ── Contact ─────────────────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-heading" data-i18n="contact.heading"></h2>
+      <div class="contact-block">
+
+        <div class="contact-item">
+          <p class="contact-label" data-i18n="contact.email"></p>
+          <p class="contact-value">
+            <a id="link-email" href="#"></a>
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <p class="contact-label" data-i18n="contact.whatsapp"></p>
+          <p class="contact-value">
+            <a id="link-whatsapp" href="#" target="_blank" rel="noopener"></a>
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <p class="contact-label" data-i18n="contact.address"></p>
+          <p class="contact-value">
+            <a id="link-address" href="#" target="_blank" rel="noopener"></a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ──────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-copy">
+        <span id="footer-name"></span>
+        <span>© <span id="footer-year"></span> <span data-i18n="footer.rights"></span></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Data & i18n ─────────────────────────────────────────── -->
+  <script src="data.js"></script>
+  <script src="lang/bg.js"></script>
+  <script src="lang/en.js"></script>
+  <script src="lang/de.js"></script>
+  <script>
+    const LANGS = { bg: LANG_BG, en: LANG_EN, de: LANG_DE };
+
+    // ── Helpers ──────────────────────────────────────────────
+    function get(obj, path) {
+      return path.split('.').reduce((o, k) => o && o[k], obj);
+    }
+
+    // ── Render services ──────────────────────────────────────
+    function renderServices(lang) {
+      const section = document.querySelector('.services .container');
+      // Remove old rows (keep heading and price-note)
+      section.querySelectorAll('.service-row').forEach(el => el.remove());
+      const heading  = section.querySelector('.section-heading');
+      const priceNote = section.querySelector('.price-note');
+
+      DATA.services.forEach(svc => {
+        const row = document.createElement('div');
+        row.className = 'service-row';
+        row.innerHTML = `
+          <span class="service-name">${lang.services.items[svc.key]}</span>
+          <span class="service-price">
+            <span class="service-price-label">${lang.services.from}</span>
+            ${svc.price} ${lang.services.currency}
+          </span>`;
+        section.insertBefore(row, priceNote);
+      });
+    }
+
+    // ── Apply language ───────────────────────────────────────
+    function setLang(code) {
+      const lang = LANGS[code];
+      if (!lang) return;
+
+      // Update <html lang>
+      document.documentElement.lang = code;
+
+      // Translate all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const val = get(lang, el.dataset.i18n);
+        if (val !== undefined) el.textContent = val;
+      });
+
+      // Re-render service rows with new language
+      renderServices(lang);
+
+      // Address: Cyrillic for BG, Latinised for EN/DE
+      document.getElementById('link-address').textContent =
+        code === 'bg' ? DATA.addressBg : DATA.addressLatin;
+
+      // Active button state
+      document.querySelectorAll('.lang-switcher button').forEach(btn => {
+        btn.classList.toggle('active', btn.id === 'btn-' + code);
+      });
+
+      // Persist choice
+      try { localStorage.setItem('lang', code); } catch(_) {}
+    }
+
+    // ── Populate data-driven links ───────────────────────────
+    function applyData() {
+      document.getElementById('link-email').href        = 'mailto:' + DATA.email;
+      document.getElementById('link-email').textContent = DATA.email;
+
+      const wa = document.getElementById('link-whatsapp');
+      wa.href        = 'https://wa.me/' + DATA.whatsapp.replace(/\D/g, '');
+      wa.textContent = DATA.whatsapp;
+
+      const addr = document.getElementById('link-address');
+      addr.href = DATA.addressMapUrl;
+
+      // Address set on init; updated per language in setLang
+      document.getElementById('link-address').href = DATA.addressMapUrl;
+
+      document.getElementById('site-logo').src = DATA.logoPath;
+      document.getElementById('footer-name').textContent = DATA.companyName;
+      document.getElementById('footer-year').textContent = new Date().getFullYear();
+    }
+
+    // ── Init ─────────────────────────────────────────────────
+    applyData();
+    const savedLang = (() => {
+      try { return localStorage.getItem('lang'); } catch(_) { return null; }
+    })();
+    setLang(savedLang || 'bg');
+  </script>
+
+</body>
+</html>
