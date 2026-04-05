@@ -13,10 +13,11 @@ const LANG_EN = {
   services: {
     heading: "Services & Pricing",
     from:          "from",
-    currency:      "EUR",
+    bgnSuffix:     "lv.",
     discretionary: "personalised quote",
+    units: { perPage: "per page" },
     items: {
-      legalisedTranslation: "Legalised Translation German ↔ Bulgarian",
+      legalisedTranslation: "Legalised Translation from German to Bulgarian and from Bulgarian to German",
       printAds:             "Print Advertising",
       publishing:           "Publishing",
     },
@@ -33,6 +34,6 @@ const LANG_EN = {
   footer: {
     rights:  "All rights reserved.",
     uic:     "Unified Identification Code (UIC):",
-    vat:     "VAT No.:",
+    vat:     "VAT Number:",
   },
 };

@@ -194,6 +194,12 @@ header .container {
   white-space: nowrap;
 }
 
+.service-price-bgn {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
 .service-price-label {
   font-size: 0.8rem;
   font-weight: 400;

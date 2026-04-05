@@ -13,10 +13,11 @@ const LANG_DE = {
   services: {
     heading: "Leistungen & Preise",
     from:          "ab",
-    currency:      "EUR",
+    bgnSuffix:     "lv.",
     discretionary: "individuelles Angebot",
+    units: { perPage: "pro Seite" },
     items: {
-      legalisedTranslation: "Beglaubigte Übersetzung Deutsch ↔ Bulgarisch",
+      legalisedTranslation: "Beglaubigte Übersetzung vom Deutschen ins Bulgarische und vom Bulgarischen ins Deutsche",
       printAds:             "Printwerbung",
       publishing:           "Verlagsdienstleistungen",
     },
@@ -33,6 +34,6 @@ const LANG_DE = {
   footer: {
     rights:  "Alle Rechte vorbehalten.",
     uic:     "Einheitlicher Identifikationscode (EI):",
-    vat:     "USt-IdNr.:",
+    vat:     "Umsatzsteuer-Identifikationsnummer:",
   },
 };

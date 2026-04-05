@@ -23,8 +23,10 @@ const DATA = {
   // Google Maps link for the address
   addressMapUrl: "https://maps.app.goo.gl/5vPEtGgnL8djLR2T8",
 
+  eurToBgn: 1.95583, // fixed BGN/EUR conversion rate
+
   services: [
-    { key: "legalisedTranslation", price: 30 },
+    { key: "legalisedTranslation", price: 30, unit: "perPage" },
     { key: "printAds",             price: null },
     { key: "publishing",           price: null },
   ],

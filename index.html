@@ -127,9 +127,11 @@
       DATA.services.forEach(svc => {
         const row = document.createElement('div');
         row.className = 'service-row';
+        const fmt = n => n.toFixed(2).replace('.', ',');
+        const unit = svc.unit ? ` ${lang.services.units[svc.unit]}` : '';
         const priceHtml = svc.price === null
           ? `<span class="service-price">${lang.services.discretionary}</span>`
-          : `<span class="service-price"><span class="service-price-label">${lang.services.from}</span> ${svc.price} ${lang.services.currency}</span>`;
+          : `<span class="service-price"><span class="service-price-label">${lang.services.from}</span> ${fmt(svc.price)} €${unit} <span class="service-price-bgn">(${fmt(svc.price * DATA.eurToBgn)} ${lang.services.bgnSuffix}${unit})</span></span>`;
         row.innerHTML = `
           <span class="service-name">${lang.services.items[svc.key]}</span>
           ${priceHtml}`;

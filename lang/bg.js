@@ -13,10 +13,11 @@ const LANG_BG = {
   services: {
     heading: "Услуги и цени",
     from:          "от",
-    currency:      "EUR",
+    bgnSuffix:     "лв.",
     discretionary: "индивидуална оферта",
+    units: { perPage: "на страница" },
     items: {
-      legalisedTranslation: "Легализиран превод Немски ↔ Български",
+      legalisedTranslation: "Легализиран превод от Немски на Български и от Български на Немски",
       printAds:             "Печатна реклама",
       publishing:           "Издателска дейност",
     },
