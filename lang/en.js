@@ -27,7 +27,9 @@ const LANG_EN = {
   contact: {
     heading:  "Contact",
     email:    "Email",
+    phone:    "Phone",
     whatsapp: "WhatsApp",
+    signal:   "Signal",
     address:  "Address",
   },
 

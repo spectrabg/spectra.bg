@@ -27,7 +27,9 @@ const LANG_BG = {
   contact: {
     heading:  "Контакти",
     email:    "Имейл",
+    phone:    "Телефон",
     whatsapp: "WhatsApp",
+    signal:   "Signal",
     address:  "Адрес",
   },
 

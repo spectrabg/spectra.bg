@@ -12,7 +12,7 @@ const DATA = {
 
   email: "office@spectra.bg",
 
-  whatsapp: "+35952607897", // international format, no spaces or dashes
+  phone: "+35952607897", // used for phone, WhatsApp and Signal — international format, no spaces or dashes
 
   // Address shown in BG (Cyrillic)
   addressBg: "улица Иван Аксаков 31, Варна, 9002, България",

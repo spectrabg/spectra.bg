@@ -222,7 +222,7 @@ header .container {
 .contact-block {
   grid-column: span 8;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: var(--gap);
   margin-top: 1rem;
 }
@@ -289,6 +289,6 @@ footer .container {
   .service-row     { grid-column: span 4; }
   .legal-notice    { grid-column: span 4; }
 
-  .contact-block   { grid-column: span 4; grid-template-columns: 1fr; }
+  .contact-block   { grid-column: span 4; grid-template-columns: repeat(2, 1fr); }
   .footer-copy     { grid-column: span 4; flex-direction: column; gap: 0.25rem; text-align: center; justify-content: center; }
 }

@@ -59,9 +59,23 @@
         </div>
 
         <div class="contact-item">
+          <p class="contact-label" data-i18n="contact.phone"></p>
+          <p class="contact-value">
+            <a id="link-phone" href="#"></a>
+          </p>
+        </div>
+
+        <div class="contact-item">
           <p class="contact-label" data-i18n="contact.whatsapp"></p>
           <p class="contact-value">
             <a id="link-whatsapp" href="#" target="_blank" rel="noopener"></a>
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <p class="contact-label" data-i18n="contact.signal"></p>
+          <p class="contact-value">
+            <a id="link-signal" href="#" target="_blank" rel="noopener"></a>
           </p>
         </div>
 
@@ -175,9 +189,19 @@
       document.getElementById('link-email').href        = 'mailto:' + DATA.email;
       document.getElementById('link-email').textContent = DATA.email;
 
+      const phoneDigits = DATA.phone.replace(/\D/g, '');
+
+      const ph = document.getElementById('link-phone');
+      ph.href        = 'tel:' + DATA.phone;
+      ph.textContent = DATA.phone;
+
       const wa = document.getElementById('link-whatsapp');
-      wa.href        = 'https://wa.me/' + DATA.whatsapp.replace(/\D/g, '');
-      wa.textContent = DATA.whatsapp;
+      wa.href        = 'https://wa.me/' + phoneDigits;
+      wa.textContent = DATA.phone;
+
+      const sg = document.getElementById('link-signal');
+      sg.href        = 'https://signal.me/#p/' + DATA.phone;
+      sg.textContent = DATA.phone;
 
       const addr = document.getElementById('link-address');
       addr.href = DATA.addressMapUrl;

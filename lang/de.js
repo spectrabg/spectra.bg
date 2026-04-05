@@ -27,7 +27,9 @@ const LANG_DE = {
   contact: {
     heading:  "Kontakt",
     email:    "E-Mail",
+    phone:    "Telefon",
     whatsapp: "WhatsApp",
+    signal:   "Signal",
     address:  "Adresse",
   },
 
