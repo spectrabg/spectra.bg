@@ -24,9 +24,8 @@ const DATA = {
   addressMapUrl: "https://maps.app.goo.gl/5vPEtGgnL8djLR2T8",
 
   services: [
-    { key: "translation",    price: 15 },
-    { key: "legalisation",   price: 30 },
-    { key: "printAds",       price: 50 },
-    { key: "publishing",     price: 80 },
+    { key: "legalisedTranslation", price: 30 },
+    { key: "printAds",             price: null },
+    { key: "publishing",           price: null },
   ],
 };

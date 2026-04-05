@@ -7,18 +7,18 @@ const LANG_DE = {
   },
 
   hero: {
-    tagline: "Übersetzung. Beglaubigung. Printwerbung. Verlag.",
+    tagline: "Beglaubigte Übersetzung. Printwerbung. Verlag.",
   },
 
   services: {
     heading: "Leistungen & Preise",
-    from:    "ab",
-    currency: "EUR",
+    from:          "ab",
+    currency:      "EUR",
+    discretionary: "individuelles Angebot",
     items: {
-      translation:  "Übersetzung Deutsch ↔ Bulgarisch",
-      legalisation: "Beglaubigung nach bulgarischem Recht",
-      printAds:     "Printwerbung",
-      publishing:   "Verlagsdienstleistungen",
+      legalisedTranslation: "Beglaubigte Übersetzung Deutsch ↔ Bulgarisch",
+      printAds:             "Printwerbung",
+      publishing:           "Verlagsdienstleistungen",
     },
     priceNote: "Preise sind Richtwerte. Kontaktieren Sie uns für ein individuelles Angebot.",
   },

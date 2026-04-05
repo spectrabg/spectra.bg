@@ -127,12 +127,12 @@
       DATA.services.forEach(svc => {
         const row = document.createElement('div');
         row.className = 'service-row';
+        const priceHtml = svc.price === null
+          ? `<span class="service-price">${lang.services.discretionary}</span>`
+          : `<span class="service-price"><span class="service-price-label">${lang.services.from}</span> ${svc.price} ${lang.services.currency}</span>`;
         row.innerHTML = `
           <span class="service-name">${lang.services.items[svc.key]}</span>
-          <span class="service-price">
-            <span class="service-price-label">${lang.services.from}</span>
-            ${svc.price} ${lang.services.currency}
-          </span>`;
+          ${priceHtml}`;
         section.insertBefore(row, priceNote);
       });
     }

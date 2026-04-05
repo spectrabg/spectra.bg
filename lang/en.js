@@ -7,18 +7,18 @@ const LANG_EN = {
   },
 
   hero: {
-    tagline: "Translation. Legalisation. Print Advertising. Publishing.",
+    tagline: "Legalised Translation. Print Advertising. Publishing.",
   },
 
   services: {
     heading: "Services & Pricing",
-    from:    "from",
-    currency: "EUR",
+    from:          "from",
+    currency:      "EUR",
+    discretionary: "personalised quote",
     items: {
-      translation:  "Translation German ↔ Bulgarian",
-      legalisation: "Legalisation under Bulgarian Law",
-      printAds:     "Print Advertising",
-      publishing:   "Publishing",
+      legalisedTranslation: "Legalised Translation German ↔ Bulgarian",
+      printAds:             "Print Advertising",
+      publishing:           "Publishing",
     },
     priceNote: "Prices are indicative. Contact us for a personalised quote.",
   },
