@@ -80,7 +80,9 @@
   <footer>
     <div class="container">
       <div class="footer-copy">
-        <span id="footer-name"></span>
+        <span id="footer-legal-name"></span>
+        <span><span data-i18n="footer.uic"></span> <span id="footer-uic"></span></span>
+        <span><span data-i18n="footer.vat"></span> <span id="footer-vat"></span></span>
         <span>© <span id="footer-year"></span> <span data-i18n="footer.rights"></span></span>
       </div>
     </div>
@@ -152,9 +154,11 @@
       // Re-render service rows with new language
       renderServices(lang);
 
-      // Address: Cyrillic for BG, Latinised for EN/DE
+      // Address & legal name: Cyrillic for BG, Latin for EN/DE
       document.getElementById('link-address').textContent =
         code === 'bg' ? DATA.addressBg : DATA.addressLatin;
+      document.getElementById('footer-legal-name').textContent =
+        code === 'bg' ? DATA.legalNameBg : DATA.legalNameLatin;
 
       // Active button state
       document.querySelectorAll('.lang-switcher button').forEach(btn => {
@@ -181,7 +185,8 @@
       document.getElementById('link-address').href = DATA.addressMapUrl;
 
       document.getElementById('site-logo').src = DATA.logoPath;
-      document.getElementById('footer-name').textContent = DATA.companyName;
+      document.getElementById('footer-uic').textContent  = DATA.uic;
+      document.getElementById('footer-vat').textContent  = DATA.vat;
       document.getElementById('footer-year').textContent = new Date().getFullYear();
     }
 

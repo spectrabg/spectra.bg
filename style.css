@@ -264,7 +264,8 @@ footer .container {
   font-size: 0.8rem;
   color: var(--fg-muted);
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
   align-items: center;
 }
 
@@ -283,5 +284,5 @@ footer .container {
   .price-note      { grid-column: span 4; }
 
   .contact-block   { grid-column: span 4; grid-template-columns: 1fr; }
-  .footer-copy     { grid-column: span 4; flex-direction: column; gap: 0.25rem; text-align: center; }
+  .footer-copy     { grid-column: span 4; flex-direction: column; gap: 0.25rem; text-align: center; justify-content: center; }
 }

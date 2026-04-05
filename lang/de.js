@@ -31,6 +31,8 @@ const LANG_DE = {
   },
 
   footer: {
-    rights: "Alle Rechte vorbehalten.",
+    rights:  "Alle Rechte vorbehalten.",
+    uic:     "Einheitlicher Identifikationscode (EI):",
+    vat:     "USt-IdNr.:",
   },
 };

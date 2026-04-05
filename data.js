@@ -4,6 +4,12 @@ const DATA = {
   companyName: "Spectra.bg",
   logoPath: "logos/Spectra.bg.svg",
 
+  // Legal identifiers
+  legalNameBg:    "СПЕКТРА БГ ЕООД",         // Cyrillic legal name
+  legalNameLatin: "SPECTRA BG EOOD",          // Latin legal name
+  uic: "123456789",                           // ЕИК / UIC / EI
+  vat: "BG123456789",                         // VAT number
+
   email: "office@spectra.bg",
 
   whatsapp: "+35952000000", // international format, no spaces or dashes

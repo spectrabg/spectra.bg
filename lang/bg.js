@@ -15,7 +15,7 @@ const LANG_BG = {
     from:    "от",
     currency: "EUR",
     items: {
-      translation:  "Превод DE ↔ BG",
+      translation:  "Превод  ↔ BG",
       legalisation: "Легализация по българското законодателство",
       printAds:     "Печатна реклама",
       publishing:   "Издателска дейност",
@@ -31,6 +31,8 @@ const LANG_BG = {
   },
 
   footer: {
-    rights: "Всички права запазени.",
+    rights:  "Всички права запазени.",
+    uic:     "Единен идентификационен код (ЕИК):",
+    vat:     "Регистрирано по ЗДДС:",
   },
 };

@@ -31,6 +31,8 @@ const LANG_EN = {
   },
 
   footer: {
-    rights: "All rights reserved.",
+    rights:  "All rights reserved.",
+    uic:     "Unified Identification Code (UIC):",
+    vat:     "VAT No.:",
   },
 };
