@@ -41,7 +41,7 @@
     <div class="container">
       <h2 class="section-heading" data-i18n="services.heading"></h2>
       <!-- Service rows injected by JS -->
-      <p class="price-note" data-i18n="services.priceNote"></p>
+      <p class="legal-notice" data-i18n="services.legalNotice"></p>
     </div>
   </section>
 
@@ -119,10 +119,9 @@
     // ── Render services ──────────────────────────────────────
     function renderServices(lang) {
       const section = document.querySelector('.services .container');
-      // Remove old rows (keep heading and price-note)
+      // Remove old rows
       section.querySelectorAll('.service-row').forEach(el => el.remove());
-      const heading  = section.querySelector('.section-heading');
-      const priceNote = section.querySelector('.price-note');
+      const legalNotice = section.querySelector('.legal-notice');
 
       DATA.services.forEach(svc => {
         const row = document.createElement('div');
@@ -135,7 +134,7 @@
         row.innerHTML = `
           <span class="service-name">${lang.services.items[svc.key]}</span>
           ${priceHtml}`;
-        section.insertBefore(row, priceNote);
+        section.insertBefore(row, legalNotice);
       });
     }
 

@@ -15,10 +15,10 @@ const DATA = {
   whatsapp: "+35952607897", // international format, no spaces or dashes
 
   // Address shown in BG (Cyrillic)
-  addressBg: "улица Иван Аксаков 31, Варна 9002, България",
+  addressBg: "улица Иван Аксаков 31, Варна, 9002, България",
 
   // Address shown in EN/DE (Latinised)
-  addressLatin: "ulitsa Ivan Aksakov 31, Varna 9002, Bulgaria",
+  addressLatin: "ulitsa Ivan Aksakov 31, Varna, 9002, Bulgaria",
 
   // Google Maps link for the address
   addressMapUrl: "https://maps.app.goo.gl/5vPEtGgnL8djLR2T8",

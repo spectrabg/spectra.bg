@@ -21,7 +21,7 @@ const LANG_EN = {
       printAds:             "Print Advertising",
       publishing:           "Publishing",
     },
-    priceNote: "Prices are indicative. Contact us for a personalised quote.",
+    legalNotice: "Documents sent by email, WhatsApp, or Signal are accepted solely for preliminary review, deadline clarification, and preparation of a quotation. The translation service is ordered and the contract is concluded in person at the office.",
   },
 
   contact: {

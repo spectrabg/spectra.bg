@@ -21,7 +21,7 @@ const LANG_DE = {
       printAds:             "Printwerbung",
       publishing:           "Verlagsdienstleistungen",
     },
-    priceNote: "Preise sind Richtwerte. Kontaktieren Sie uns für ein individuelles Angebot.",
+    legalNotice: "Per E-Mail, WhatsApp oder Signal übermittelte Dokumente werden ausschließlich zur Vorabprüfung, Fristklärung und Angebotserstellung angenommen. Die Übersetzungsleistung wird bestellt und der Vertrag wird persönlich im Büro abgeschlossen.",
   },
 
   contact: {
